@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equestrian Jump - 8-Bit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Equestrian Jump - 8-Bit">
+    <meta name="description" content="A simple 8-bit aesthetic game where a girl on a horse jumps over obstacles. Chrome dinosaur game style.">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>EQUESTRIAN JUMP</h1>
+            <p class="subtitle">Press <kbd>Space</kbd> or <kbd>↑</kbd> to jump!</p>
+        </header>
+
+        <main class="game-wrapper">
+            <div id="start-screen" class="overlay">
+                <h2 class="pixel-text">READY?</h2>
+                <button id="start-btn" class="pixel-btn">Play Game</button>
+            </div>
+
+            <div id="game-over" class="overlay hidden">
+                <h2 class="pixel-text" style="color:#ef4444">GAME OVER</h2>
+                <p>Score: <span id="final-score">0</span></p>
+                <button id="restart-btn" class="pixel-btn">Try Again</button>
+            </div>
+            
+            <div class="score-board">
+                <span class="pixel-text">HI: <span id="high-score">00000</span></span>
+                <span class="pixel-text" id="score">00000</span>
+            </div>
+
+            <canvas id="gameCanvas" width="800" height="300"></canvas>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
