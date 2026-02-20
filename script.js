@@ -161,7 +161,7 @@ class Obstacle {
         this.y = GROUND_Y - this.height;
     }
 
-    draw(ctx) {a
+    draw(ctx) {
         switch (this.variant) {
             case 0: this.drawVertical(ctx); break;
             case 1: this.drawPlank(ctx); break;
