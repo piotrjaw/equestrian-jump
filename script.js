@@ -34,11 +34,11 @@ const player = {
     height: 50,
     vy: 0,
     isJumping: false,
-    
+
     // Animation frames for galloping (simple leg switching)
     frame: 0,
     frameCount: 0,
-    
+
     draw(ctx) {
         // Draw Horse (Fleabitten Grey — near-white with dark flecks)
         ctx.fillStyle = '#eaecef';
@@ -105,7 +105,7 @@ const player = {
         ctx.fillRect(this.x + 23, this.y + 25, 6, 12);
 
     },
-    
+
     update() {
         // Easter egg: hover mode
         if (flyMode) {
@@ -136,7 +136,7 @@ const player = {
             }
         }
     },
-    
+
     jump() {
         if (!this.isJumping) {
             this.vy = JUMP_FORCE;
@@ -161,7 +161,7 @@ class Obstacle {
         this.y = GROUND_Y - this.height;
     }
 
-    draw(ctx) {
+    draw(ctx) {a
         switch (this.variant) {
             case 0: this.drawVertical(ctx); break;
             case 1: this.drawPlank(ctx); break;
@@ -365,7 +365,7 @@ const environment = {
             // Simple pixel cloud shape
             ctx.fillRect(cloud.x, cloud.y, cloud.width, 15);
             ctx.fillRect(cloud.x + 10, cloud.y - 10, cloud.width - 20, 10);
-            
+
             cloud.x -= cloud.speed;
             if (cloud.x + cloud.width < 0) {
                 cloud.x = canvas.width;
@@ -430,7 +430,7 @@ let spawnTimer = 100;
 
 function gameLoop() {
     if (!isPlaying) return;
-    
+
     // Clear Canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -479,7 +479,7 @@ function gameLoop() {
 function startGame() {
     startScreen.classList.add('hidden');
     gameOverScreen.classList.add('hidden');
-    
+
     // Reset State
     player.y = GROUND_Y - player.height;
     player.vy = 0;
@@ -497,14 +497,14 @@ function startGame() {
 function endGame() {
     isPlaying = false;
     cancelAnimationFrame(animationId);
-    
+
     // Update High Score
     if (score > highScore) {
         highScore = Math.floor(score);
         localStorage.setItem('equestrian_high_score', highScore);
         highScoreElement.textContent = formatScore(highScore);
     }
-    
+
     finalScoreElement.textContent = Math.floor(score);
     gameOverScreen.classList.remove('hidden');
 }
